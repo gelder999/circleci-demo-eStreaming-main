@@ -7,10 +7,10 @@ workflows:
   hello-world:
     jobs:
       - build
-  integration-tests:
+  integration-tests-PP-UAT:
     jobs:
-      - regression
       - QA
+      - regression
       - negative
       - fallback
 jobs:
@@ -41,7 +41,7 @@ jobs:
           path: .\bin\Release\netcoreapp2.1\win10-x64\publish\circleci-demo-windows.exe
 
 
-  regression:
+  QA:
     executor:
       name: win/default
     steps:
@@ -52,7 +52,7 @@ jobs:
               cd WebBrowserTestsSample/tests/WebBrowserTests
               dotnet test
 
-  QA:
+  regression:
     executor:
       name: win/default
       shell: powershell.exe
