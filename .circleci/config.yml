@@ -7,6 +7,11 @@ workflows:
   hello-world:
     jobs:
       - build
+      - hold:
+          type: approval
+          requires:
+                  - build
+
   integration-tests-PP-UAT:
     jobs:
       - QA
