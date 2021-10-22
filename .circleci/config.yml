@@ -9,7 +9,7 @@ workflows:
       - build
   integration-tests:
     jobs:
-      - browser-tests
+      - regression
       - ui-tests
 
 jobs:
@@ -40,7 +40,7 @@ jobs:
           path: .\bin\Release\netcoreapp2.1\win10-x64\publish\circleci-demo-windows.exe
 
 
-  browser-tests:
+  regression:
     executor:
       name: win/default
     steps:
