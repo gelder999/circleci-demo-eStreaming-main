@@ -11,6 +11,9 @@ workflows:
           type: approval
           requires:
                   - build
+      - deploy:
+          requires:
+            - hold
 
   integration-tests-PP-UAT:
     jobs:
@@ -44,6 +47,13 @@ jobs:
           command: .\bin\Release\netcoreapp2.1\win10-x64\publish\circleci-demo-windows.exe 
       - store_artifacts:
           path: .\bin\Release\netcoreapp2.1\win10-x64\publish\circleci-demo-windows.exe
+          
+  deploy:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: "echo say hello" 
 
 
   QA:
