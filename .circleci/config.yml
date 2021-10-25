@@ -18,8 +18,8 @@ workflows:
 
   integrate-performance-release-production:
     jobs:
-      - release
       - performance
+      - release
       - test
      
 jobs:
