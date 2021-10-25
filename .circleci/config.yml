@@ -16,11 +16,11 @@ workflows:
           requires:
             - hold
 
-  integration-tests-PP-UAT:
+  integrate-performance-release-production:
     jobs:
+      - release
       - performance
       - test
-      - release
      
 jobs:
   build:
