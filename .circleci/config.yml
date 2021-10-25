@@ -15,11 +15,11 @@ workflows:
       - deploy:
           requires:
             - hold
+      - release
 
   integrate-performance-release-production:
     jobs:
-      - performance
-      - release
+      - performance    
       - test
      
 jobs:
