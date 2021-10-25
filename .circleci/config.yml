@@ -11,13 +11,13 @@ workflows:
           type: approval
           requires:
                   - build
-                           
+      -  release               
       - deploy:
           requires:
             - hold
-      - release
 
-  integrate-performance-release-production:
+
+integrate-performance-release-production:
     jobs:
       - performance    
       - test
