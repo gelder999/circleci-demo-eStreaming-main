@@ -57,7 +57,7 @@ jobs:
       - run: "echo say hello" 
 
 
-  performance:
+  release:
     executor:
       name: win/default
     steps:
@@ -94,7 +94,7 @@ jobs:
               cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\common7\ide\extensions\TestPlatform"
               .\vstest.console.exe C:\Users\circleci\project\NotepadTest\bin\debug\NotepadTest.dll
 
-  release:
+  performance:
     executor:
       name: win/default
       shell: powershell.exe
